@@ -18,13 +18,12 @@
       color: #123524;
     }
 
-    
     .section:target {
-    border: 3px solid #0b4b2d;
-    box-shadow: 0 0 0 6px rgba(11, 75, 45, 0.35);
-    transform: scale(1.01);
-    transition: 0.3s ease;
-    scroll-margin-top: 100px;
+      border: 3px solid #0b4b2d;
+      box-shadow: 0 0 0 6px rgba(11, 75, 45, 0.35);
+      transform: scale(1.01);
+      transition: 0.3s ease;
+      scroll-margin-top: 100px;
     }
 
     nav {
@@ -39,13 +38,13 @@
     }
 
     .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: "Times New Roman", Georgia, serif;
-    font-size: 42px;
-    font-weight: 500;
-    letter-spacing: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Times New Roman", Georgia, serif;
+      font-size: 42px;
+      font-weight: 500;
+      letter-spacing: 14px;
     }
 
     .menu {
@@ -139,28 +138,9 @@
 
     .identification-grid {
       display: grid;
-      grid-template-columns: 1fr 130px;
+      grid-template-columns: 1fr;
       gap: 24px;
       align-items: start;
-    }
-
-    .qr-box {
-      border: 1px solid #dde7e1;
-      border-radius: 12px;
-      padding: 14px;
-      text-align: center;
-    }
-
-    .qr {
-      width: 92px;
-      height: 92px;
-      margin: auto;
-      background:
-        linear-gradient(90deg, #111 10px, transparent 10px) 0 0 / 20px 20px,
-        linear-gradient(#111 10px, transparent 10px) 0 0 / 20px 20px,
-        #fff;
-      border: 8px solid white;
-      outline: 3px solid #111;
     }
 
     .content-grid {
@@ -368,8 +348,6 @@
         justify-content: center;
       }
 
-      
-
       .top-grid,
       .content-grid,
       .bottom-grid,
@@ -396,16 +374,16 @@
 <body>
   <nav>
     <div class="logo">
-    VEKTA
+      VEKTA
     </div>
 
     <ul class="menu">
-        <li><a href="#identificacion" class="active">Identificación</a></li>
-        <li><a href="#ubicacion">Ubicación</a></li>
-        <li><a href="#productiva">Información</a></li>
-        <li><a href="#sanitario">Historial</a></li>
-        <li><a href="#reproductiva">Información reproductiva</a></li>
-        <li><a href="#gestion">Gestión y manejo</a></li>
+      <li><a href="#identificacion" class="active">Identificación</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a href="#productiva">Información</a></li>
+      <li><a href="#sanitario">Historial</a></li>
+      <li><a href="#reproductiva">Información reproductiva</a></li>
+      <li><a href="#gestion">Gestión y manejo</a></li>
     </ul>
 
     <div class="user">Vistante ▾</div>
@@ -417,37 +395,33 @@
 
       <section class="section" id="identificacion">
         <h2>1. Identificación general</h2>
+
         <div class="identification-grid">
           <div>
             <div class="info-row">
               <span class="label">Código único</span>
               <span class="value">840003215678912</span>
             </div>
+
             <div class="info-row">
               <span class="label">Nombre</span>
               <span class="value">Mooana</span>
             </div>
+
             <div class="info-row">
               <span class="label">Raza</span>
               <span class="value">Simmental</span>
             </div>
+
             <div class="info-row">
               <span class="label">Sexo</span>
               <span class="value">Hembra</span>
             </div>
+
             <div class="info-row">
               <span class="label">Fecha de nacimiento</span>
               <span class="value">15/02/2023</span>
             </div>
-          </div>
-
-          <div class="qr-box">
-            <img src="QR.jpeg" alt="Código QR"
-            style="width: 92px; height: 92px; object-fit: cover; border-radius: 8px;" />
-
-            <p style="margin-top: 12px; font-size: 13px;">
-                QR / Chip
-            </p>
           </div>
         </div>
       </section>
@@ -456,16 +430,20 @@
     <div class="content-grid">
       <section class="section" id="ubicacion">
         <h2>2. Ubicación y geolocalización</h2>
+
         <div class="map-card">
           <div class="map">
             <div class="pin"></div>
           </div>
+
           <div>
             <p><strong>Ubicación actual</strong></p>
             <p>Potrero 12 - Sector Norte</p><br>
             <p><strong>Coordenadas (GPS)</strong></p>
             <p>4.7383° N, -74.1256° W</p>
-            <p style="font-size: 13px; color: #65736b; margin-top: 8px;">Actualizado: Hace unos segundos</p>
+            <p style="font-size: 13px; color: #65736b; margin-top: 8px;">
+              Actualizado: Hace unos segundos
+            </p>
           </div>
         </div>
 
@@ -478,6 +456,7 @@
 
       <section class="section" id="productiva">
         <h2>3. Información productiva</h2>
+
         <div class="stats-grid">
           <div class="stat">
             <p class="stat-title">Peso actual</p>
@@ -511,6 +490,7 @@
     <div class="content-grid">
       <section class="section" id="sanitario">
         <h2>4. Historial sanitario</h2>
+
         <table>
           <thead>
             <tr>
@@ -520,6 +500,7 @@
               <th>Próxima dosis</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
               <td>Vacuna</td>
@@ -527,24 +508,28 @@
               <td>12/03/2026</td>
               <td class="green">12/05/2026</td>
             </tr>
+
             <tr>
               <td>Vacuna</td>
               <td>Brucelosis</td>
               <td>12/03/2026</td>
               <td>—</td>
             </tr>
+
             <tr>
               <td>Desparasitación</td>
               <td>Ivermectina</td>
               <td>05/01/2026</td>
               <td class="green">05/07/2026</td>
             </tr>
+
             <tr>
               <td>Enfermedad</td>
               <td>Diarrea</td>
               <td>20/12/2025</td>
               <td>—</td>
             </tr>
+
             <tr>
               <td>Tratamiento</td>
               <td>Antibiótico</td>
@@ -557,34 +542,69 @@
 
       <section class="section" id="reproductiva">
         <h2>5. Información reproductiva</h2>
-        <div class="repro-row"><strong>Ciclo reproductivo</strong><span class="green">En ciclo</span></div>
-        <div class="repro-row"><strong>Último servicio</strong><span>15/10/2025 (Inseminación)</span></div>
-        <div class="repro-row"><strong>Diagnóstico de preñez</strong><span class="green">Preñada<br><small>Confirmado: 15/01/2026</small></span></div>
-        <div class="repro-row"><strong>Fecha probable de parto</strong><span>22/09/2026</span></div>
-        <div class="repro-row"><strong>Historial de crías</strong><span>1 cría</span></div>
+
+        <div class="repro-row">
+          <strong>Ciclo reproductivo</strong>
+          <span class="green">En ciclo</span>
+        </div>
+
+        <div class="repro-row">
+          <strong>Último servicio</strong>
+          <span>15/10/2025 (Inseminación)</span>
+        </div>
+
+        <div class="repro-row">
+          <strong>Diagnóstico de preñez</strong>
+          <span class="green">Preñada<br><small>Confirmado: 15/01/2026</small></span>
+        </div>
+
+        <div class="repro-row">
+          <strong>Fecha probable de parto</strong>
+          <span>22/09/2026</span>
+        </div>
+
+        <div class="repro-row">
+          <strong>Historial de crías</strong>
+          <span>1 cría</span>
+        </div>
       </section>
     </div>
 
     <section class="section" id="gestion">
       <h2>6. Gestión y manejo</h2>
+
       <div class="bottom-grid">
         <div>
-          <div class="management-row"><strong>Movimientos</strong><span>3 registros</span></div>
-          <div class="management-row"><strong>Estado actual</strong><span><span class="badge">Activa</span></span></div>
-          <div class="management-row"><strong>Observaciones generales</strong><span>Animal dócil y de buen desarrollo. Se adapta bien al pastoreo.</span></div>
+          <div class="management-row">
+            <strong>Movimientos</strong>
+            <span>3 registros</span>
+          </div>
+
+          <div class="management-row">
+            <strong>Estado actual</strong>
+            <span><span class="badge">Activa</span></span>
+          </div>
+
+          <div class="management-row">
+            <strong>Observaciones generales</strong>
+            <span>Animal dócil y de buen desarrollo. Se adapta bien al pastoreo.</span>
+          </div>
         </div>
 
         <div>
           <h3 style="margin-bottom: 20px;">Línea de tiempo de movimientos</h3>
+
           <div class="timeline">
             <div class="event">
               <strong>15/03/2024 — Traslado</strong>
               <p>Potrero 8 → Potrero 12</p>
             </div>
+
             <div class="event">
               <strong>10/01/2024 — Compra</strong>
               <p>Proveedor: Ganadería El Paraíso</p>
             </div>
+
             <div class="event">
               <strong>Nacimiento</strong>
               <p>Finca La Esperanza</p>
