@@ -2,377 +2,336 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VEKTA | Ficha del Animal</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
     }
 
-    body {
-      background: hsl(30, 100%, 100%);
-      color: #123524;
+    body{
+      background:#fffaf2;
+      color:#123524;
     }
 
-    .section:target {
-      border: 3px solid #0b4b2d;
-      box-shadow: 0 0 0 6px rgba(11, 75, 45, 0.35);
-      transform: scale(1.01);
-      transition: 0.3s ease;
-      scroll-margin-top: 100px;
+    .section:target{
+      border:3px solid #0b4b2d;
+      box-shadow:0 0 0 6px rgba(11,75,45,0.35);
+      transform:scale(1.01);
+      transition:0.3s ease;
+      scroll-margin-top:100px;
     }
 
-    nav {
-      background: linear-gradient(90deg, #06351f, #0b4b2d);
-      color: white;
-      height: 76px;
-      padding: 0 36px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    nav{
+      background:linear-gradient(90deg,#06351f,#0b4b2d);
+      color:white;
+      height:76px;
+      padding:0 36px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow:0 4px 18px rgba(0,0,0,0.18);
+      position:sticky;
+      top:0;
+      z-index:100;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: "Times New Roman", Georgia, serif;
-      font-size: 42px;
-      font-weight: 500;
-      letter-spacing: 14px;
+    .logo{
+      font-family:"Times New Roman", Georgia, serif;
+      font-size:42px;
+      font-weight:500;
+      letter-spacing:14px;
     }
 
-    .menu {
-      list-style: none;
-      display: flex;
-      gap: 28px;
-      font-size: 15px;
-      align-items: center;
+    .menu{
+      list-style:none;
+      display:flex;
+      gap:28px;
+      align-items:center;
     }
 
-    .menu a {
-      color: white;
-      text-decoration: none;
-      opacity: 0.95;
-      font-weight: 600;
+    .menu a{
+      color:white;
+      text-decoration:none;
+      font-size:15px;
+      font-weight:600;
     }
 
     .menu a:hover,
-    .menu .active {
-      color: #d7f77b;
-      border-bottom: 3px solid #d7f77b;
-      padding-bottom: 10px;
+    .menu .active{
+      color:#d7f77b;
+      border-bottom:3px solid #d7f77b;
+      padding-bottom:10px;
     }
 
-    .user {
-      font-weight: 600;
-      font-size: 15px;
+    .user{
+      font-size:15px;
+      font-weight:600;
     }
 
-    .page {
-      width: min(1200px, 94%);
-      margin: 34px auto;
+    .page{
+      width:min(1200px,94%);
+      margin:34px auto;
     }
 
-    .top-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 24px;
-      margin-bottom: 26px;
+    .top-grid{
+      display:grid;
+      grid-template-columns:1fr 1.15fr;
+      gap:24px;
+      margin-bottom:26px;
     }
 
-    .cow-photo {
-      width: 100%;
-      height: 385px;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-      background: white;
+    .cow-photo{
+      width:100%;
+      height:385px;
+      object-fit:cover;
+      border-radius:18px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.12);
     }
 
-    .section {
-      background: rgb(255, 255, 255);
-      border: 1px solid #e2ebe5;
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+    .section{
+      background:#f1e4cb;
+      border:1px solid #d8c4a1;
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 8px 22px rgba(0,0,0,0.05);
     }
 
-    .section h2 {
-      font-size: 20px;
-      color: #0b5b33;
-      margin-bottom: 18px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid #dfe9e3;
-      text-transform: uppercase;
+    .section h2{
+      font-size:20px;
+      color:#0b5b33;
+      margin-bottom:18px;
+      padding-bottom:14px;
+      border-bottom:1px solid #d6c4a5;
+      text-transform:uppercase;
     }
 
-    .info-row {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid #edf2ef;
-      align-items: center;
+    .info-row{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:14px;
+      padding:14px 0;
+      border-bottom:1px solid #dccfb6;
+      align-items:center;
     }
 
-    .info-row:last-child {
-      border-bottom: none;
+    .info-row:last-child{
+      border-bottom:none;
     }
 
-    .label {
-      color: #35483d;
-      font-size: 14px;
+    .label{
+      color:#35483d;
+      font-size:14px;
     }
 
-    .value {
-      font-size: 16px;
-      font-weight: 700;
-      color: #061b11;
+    .value{
+      font-size:16px;
+      font-weight:700;
+      color:#061b11;
     }
 
-    .identification-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: start;
+    .identification-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:24px;
     }
 
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 24px;
-      margin-bottom: 26px;
+    .content-grid{
+      display:grid;
+      grid-template-columns:1fr 1.15fr;
+      gap:24px;
+      margin-bottom:26px;
     }
 
-    .map-card {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 22px;
-      margin-bottom: 16px;
+    .map-card{
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:22px;
+      margin-bottom:16px;
     }
 
-    .map {
-      height: 155px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #d7efd8, #c8e7ef);
-      position: relative;
-      overflow: hidden;
+    .map{
+      width:100%;
+      height:155px;
+      border:0;
+      border-radius:14px;
     }
 
-    .map::before,
-    .map::after {
-      content: "";
-      position: absolute;
-      background: rgba(255, 255, 255, 0.85);
-      height: 4px;
-      width: 230px;
-      transform: rotate(-30deg);
-      top: 60px;
-      left: -20px;
-      border-radius: 20px;
+    .mini-list{
+      border-top:1px solid #dccfb6;
     }
 
-    .map::after {
-      transform: rotate(35deg);
-      top: 95px;
+    .mini-item{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 0;
+      border-bottom:1px solid #dccfb6;
+      font-size:15px;
     }
 
-    .pin {
-      position: absolute;
-      top: 52px;
-      left: 78px;
-      width: 38px;
-      height: 38px;
-      background: #19984b;
-      border-radius: 50% 50% 50% 0;
-      transform: rotate(-45deg);
+    .badge{
+      background:#d9f5df;
+      color:#0b7d37;
+      border-radius:10px;
+      padding:7px 12px;
+      font-size:13px;
+      font-weight:700;
     }
 
-    .pin::after {
-      content: "";
-      position: absolute;
-      width: 13px;
-      height: 13px;
-      background: white;
-      border-radius: 50%;
-      top: 12px;
-      left: 12px;
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      border:1px solid #d8c4a1;
+      border-radius:14px;
+      overflow:hidden;
     }
 
-    .mini-list {
-      border-top: 1px solid #edf2ef;
-    }
-
-    .mini-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 0;
-      border-bottom: 1px solid #edf2ef;
-      font-size: 15px;
-    }
-
-    .badge {
-      background: #d9f5df;
-      color: #0b7d37;
-      border-radius: 10px;
-      padding: 7px 12px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border: 1px solid #e5ede8;
-      border-radius: 14px;
-      overflow: hidden;
-    }
-
-    .stat {
-      padding: 26px;
-      border-right: 1px solid #e5ede8;
-      border-bottom: 1px solid #e5ede8;
+    .stat{
+      padding:26px;
+      border-right:1px solid #d8c4a1;
+      border-bottom:1px solid #d8c4a1;
     }
 
     .stat:nth-child(2),
-    .stat:nth-child(4) {
-      border-right: none;
+    .stat:nth-child(4){
+      border-right:none;
     }
 
     .stat:nth-child(3),
-    .stat:nth-child(4) {
-      border-bottom: none;
+    .stat:nth-child(4){
+      border-bottom:none;
     }
 
-    .stat-title {
-      font-weight: 700;
-      margin-bottom: 10px;
+    .stat-title{
+      font-weight:700;
+      margin-bottom:10px;
     }
 
-    .stat-number {
-      font-size: 30px;
-      font-weight: 800;
-      color: #061b11;
+    .stat-number{
+      font-size:30px;
+      font-weight:800;
     }
 
-    .stat small {
-      display: block;
-      margin-top: 8px;
-      color: #5d6b63;
+    .stat small{
+      display:block;
+      margin-top:8px;
+      color:#5d6b63;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:14px;
     }
 
-    th {
-      text-align: left;
-      background: #f4f7f5;
-      padding: 12px;
-      color: #33473b;
+    th{
+      text-align:left;
+      background:#ead8b7;
+      padding:12px;
+      color:#33473b;
     }
 
-    td {
-      padding: 13px 12px;
-      border-bottom: 1px solid #edf2ef;
+    td{
+      padding:13px 12px;
+      border-bottom:1px solid #d8c4a1;
     }
 
-    .green {
-      color: #0b8f3d;
-      font-weight: 700;
+    .green{
+      color:#0b8f3d;
+      font-weight:700;
     }
 
     .repro-row,
-    .management-row {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      padding: 16px 0;
-      border-bottom: 1px solid #edf2ef;
-      gap: 18px;
+    .management-row{
+      display:grid;
+      grid-template-columns:1fr 1.3fr;
+      padding:16px 0;
+      border-bottom:1px solid #d8c4a1;
+      gap:18px;
     }
 
-    .bottom-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 24px;
+    .bottom-grid{
+      display:grid;
+      grid-template-columns:1.1fr 1fr;
+      gap:24px;
     }
 
-    .timeline {
-      border-left: 3px solid #b7d8c1;
-      margin-left: 34px;
-      padding-left: 26px;
+    .timeline{
+      border-left:3px solid #0b4b2d;
+      margin-left:34px;
+      padding-left:26px;
     }
 
-    .event {
-      position: relative;
-      margin-bottom: 24px;
+    .event{
+      position:relative;
+      margin-bottom:24px;
     }
 
-    .event::before {
-      content: "";
-      position: absolute;
-      left: -36px;
-      top: 5px;
-      width: 13px;
-      height: 13px;
-      background: #19a34a;
-      border-radius: 50%;
+    .event::before{
+      content:"";
+      position:absolute;
+      left:-36px;
+      top:5px;
+      width:13px;
+      height:13px;
+      background:#19a34a;
+      border-radius:50%;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #59675f;
-      font-size: 14px;
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#59675f;
+      font-size:14px;
     }
 
-    @media (max-width: 900px) {
-      nav {
-        height: auto;
-        flex-direction: column;
-        gap: 16px;
-        padding: 22px;
+    @media(max-width:900px){
+
+      nav{
+        height:auto;
+        flex-direction:column;
+        gap:16px;
+        padding:22px;
       }
 
-      .menu {
-        flex-wrap: wrap;
-        justify-content: center;
+      .menu{
+        flex-wrap:wrap;
+        justify-content:center;
       }
 
       .top-grid,
       .content-grid,
       .bottom-grid,
       .map-card,
-      .identification-grid {
-        grid-template-columns: 1fr;
+      .identification-grid{
+        grid-template-columns:1fr;
       }
 
-      .cow-photo {
-        height: 300px;
+      .cow-photo{
+        height:300px;
       }
 
-      .stats-grid {
-        grid-template-columns: 1fr;
+      .stats-grid{
+        grid-template-columns:1fr;
       }
 
-      .stat {
-        border-right: none !important;
+      .stat{
+        border-right:none !important;
       }
     }
+
   </style>
 </head>
 
 <body>
+
   <nav>
+
     <div class="logo">
       VEKTA
     </div>
@@ -382,94 +341,132 @@
       <li><a href="#ubicacion">Ubicación</a></li>
       <li><a href="#productiva">Información</a></li>
       <li><a href="#sanitario">Historial</a></li>
-      <li><a href="#reproductiva">Información reproductiva</a></li>
-      <li><a href="#gestion">Gestión y manejo</a></li>
+      <li><a href="#reproductiva">Reproductiva</a></li>
+      <li><a href="#gestion">Gestión</a></li>
     </ul>
 
-    <div class="user">Vistante ▾</div>
+    <div class="user">
+      Visitante ▾
+    </div>
+
   </nav>
 
   <main class="page">
+
     <div class="top-grid">
-      <img class="cow-photo" src="Vaca.jpeg" alt="Fotografía del animal" />
+
+      <img class="cow-photo" src="Vaca.jpeg" alt="Fotografía del animal"/>
 
       <section class="section" id="identificacion">
+
         <h2>1. Identificación general</h2>
 
         <div class="identification-grid">
-          <div>
-            <div class="info-row">
-              <span class="label">Código único</span>
-              <span class="value">840003215678912</span>
-            </div>
 
-            <div class="info-row">
-              <span class="label">Nombre</span>
-              <span class="value">Mooana</span>
-            </div>
-
-            <div class="info-row">
-              <span class="label">Raza</span>
-              <span class="value">Simmental</span>
-            </div>
-
-            <div class="info-row">
-              <span class="label">Sexo</span>
-              <span class="value">Hembra</span>
-            </div>
-
-            <div class="info-row">
-              <span class="label">Fecha de nacimiento</span>
-              <span class="value">15/02/2023</span>
-            </div>
+          <div class="info-row">
+            <span class="label">Código único</span>
+            <span class="value">840003215678912</span>
           </div>
+
+          <div class="info-row">
+            <span class="label">Nombre</span>
+            <span class="value">Mooana</span>
+          </div>
+
+          <div class="info-row">
+            <span class="label">Raza</span>
+            <span class="value">Simmental</span>
+          </div>
+
+          <div class="info-row">
+            <span class="label">Sexo</span>
+            <span class="value">Hembra</span>
+          </div>
+
+          <div class="info-row">
+            <span class="label">Fecha de nacimiento</span>
+            <span class="value">15/02/2023</span>
+          </div>
+
         </div>
+
       </section>
+
     </div>
 
     <div class="content-grid">
+
       <section class="section" id="ubicacion">
+
         <h2>2. Ubicación y geolocalización</h2>
 
         <div class="map-card">
-          <div class="map">
-            <div class="pin"></div>
-          </div>
+
+          <iframe
+            class="map"
+            src="https://www.google.com/maps?q=9.9281,-84.0907&z=15&output=embed"
+            loading="lazy">
+          </iframe>
 
           <div>
+
             <p><strong>Ubicación actual</strong></p>
-            <p>Potrero 12 - Sector Norte</p><br>
+            <p>Potrero 12 - Sector Norte</p>
+
+            <br>
+
             <p><strong>Coordenadas (GPS)</strong></p>
-            <p>4.7383° N, -74.1256° W</p>
-            <p style="font-size: 13px; color: #65736b; margin-top: 8px;">
+            <p>9.9281° N, -84.0907° W</p>
+
+            <p style="font-size:13px; color:#65736b; margin-top:8px;">
               Actualizado: Hace unos segundos
             </p>
+
           </div>
+
         </div>
 
         <div class="mini-list">
-          <div class="mini-item"><span>Historial de ubicaciones</span><strong>Ver</strong></div>
-          <div class="mini-item"><span>Potreros / áreas asignadas</span><strong>Potrero 12</strong></div>
-          <div class="mini-item"><span>Alertas de salida de zona</span><span class="badge">Sin alertas</span></div>
+
+          <div class="mini-item">
+            <span>Historial de ubicaciones</span>
+            <strong>Ver</strong>
+          </div>
+
+          <div class="mini-item">
+            <span>Potreros / áreas asignadas</span>
+            <strong>Potrero 12</strong>
+          </div>
+
+          <div class="mini-item">
+            <span>Alertas de salida de zona</span>
+            <span class="badge">Sin alertas</span>
+          </div>
+
         </div>
+
       </section>
 
       <section class="section" id="productiva">
+
         <h2>3. Información productiva</h2>
 
         <div class="stats-grid">
+
           <div class="stat">
             <p class="stat-title">Peso actual</p>
             <p><span class="stat-number">285</span> kg</p>
             <small>Último registro: 18/05/2024</small>
-            <br><span class="badge">↑ 1.2 kg/día</span>
+            <br>
+            <span class="badge">↑ 1.2 kg/día</span>
           </div>
 
           <div class="stat">
             <p class="stat-title">Producción de leche</p>
             <p><span class="stat-number">12.5</span> L/día</p>
             <small>Último registro: 18/05/2024</small>
-            <br><span class="badge">↑ 0.8 L/día</span>
+            <br>
+            <span class="badge">↑ 0.8 L/día</span>
           </div>
 
           <div class="stat">
@@ -483,15 +480,21 @@
             <p><span class="stat-number">6.2</span> kg/día</p>
             <small>Materia seca</small>
           </div>
+
         </div>
+
       </section>
+
     </div>
 
     <div class="content-grid">
+
       <section class="section" id="sanitario">
+
         <h2>4. Historial sanitario</h2>
 
         <table>
+
           <thead>
             <tr>
               <th>Tipo</th>
@@ -502,6 +505,7 @@
           </thead>
 
           <tbody>
+
             <tr>
               <td>Vacuna</td>
               <td>Clostridiosis</td>
@@ -530,17 +534,14 @@
               <td>—</td>
             </tr>
 
-            <tr>
-              <td>Tratamiento</td>
-              <td>Antibiótico</td>
-              <td>20/02/2026</td>
-              <td>27/12/2026</td>
-            </tr>
           </tbody>
+
         </table>
+
       </section>
 
       <section class="section" id="reproductiva">
+
         <h2>5. Información reproductiva</h2>
 
         <div class="repro-row">
@@ -555,7 +556,7 @@
 
         <div class="repro-row">
           <strong>Diagnóstico de preñez</strong>
-          <span class="green">Preñada<br><small>Confirmado: 15/01/2026</small></span>
+          <span class="green">Preñada</span>
         </div>
 
         <div class="repro-row">
@@ -563,18 +564,18 @@
           <span>22/09/2026</span>
         </div>
 
-        <div class="repro-row">
-          <strong>Historial de crías</strong>
-          <span>1 cría</span>
-        </div>
       </section>
+
     </div>
 
     <section class="section" id="gestion">
+
       <h2>6. Gestión y manejo</h2>
 
       <div class="bottom-grid">
+
         <div>
+
           <div class="management-row">
             <strong>Movimientos</strong>
             <span>3 registros</span>
@@ -587,14 +588,19 @@
 
           <div class="management-row">
             <strong>Observaciones generales</strong>
-            <span>Animal dócil y de buen desarrollo. Se adapta bien al pastoreo.</span>
+            <span>Animal dócil y de buen desarrollo.</span>
           </div>
+
         </div>
 
         <div>
-          <h3 style="margin-bottom: 20px;">Línea de tiempo de movimientos</h3>
+
+          <h3 style="margin-bottom:20px;">
+            Línea de tiempo de movimientos
+          </h3>
 
           <div class="timeline">
+
             <div class="event">
               <strong>15/03/2024 — Traslado</strong>
               <p>Potrero 8 → Potrero 12</p>
@@ -602,21 +608,27 @@
 
             <div class="event">
               <strong>10/01/2024 — Compra</strong>
-              <p>Proveedor: Ganadería El Paraíso</p>
+              <p>Ganadería El Paraíso</p>
             </div>
 
             <div class="event">
               <strong>Nacimiento</strong>
               <p>Finca La Esperanza</p>
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
   <footer>
-    © 2026 VEKTA UCR. Trabajo de demostración - Prueba
+    © 2026 VEKTA UCR. Trabajo de demostración.
   </footer>
+
 </body>
 </html>
